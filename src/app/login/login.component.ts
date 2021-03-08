@@ -5,6 +5,7 @@ import {StorageService} from "../core/services/storage.service";
 import {LoginObject} from "./shared/login-object.model";
 import {Session} from "../core/models/session.model";
 import {Router} from "@angular/router";
+import swal from 'sweetalert';
 
 
 
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     this.userlogin = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]]
+      password: ['', [Validators.required, Validators.minLength(1)]]
   });
   }
 
@@ -57,6 +58,7 @@ export class LoginComponent implements OnInit {
       error => {
         console.log('Error: ', error);
         this.error = error;
+        swal("", "Usuario o contraseña incorrecto", "error");
       }
     );
     
