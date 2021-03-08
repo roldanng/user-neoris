@@ -5,6 +5,7 @@ import {AuthenticationService} from "../login/shared/authentication.service";
 import {HttpClient} from "@angular/common/http";
 import {SelectionModel} from "@angular/cdk/collections";
 import swal from 'sweetalert';
+import {Router} from "@angular/router";
 
 const initialSelection = [];
 const allowMultiSelect = false;
@@ -26,7 +27,8 @@ export class HomeComponent implements OnInit {
 
   constructor(private storageService: StorageService,
               private authenticationService: AuthenticationService,
-              private http: HttpClient) { }
+              private http: HttpClient,
+              private router: Router) { }
 
   ngOnInit() {
     this.user = this.storageService.getCurrentUser();
@@ -42,7 +44,7 @@ export class HomeComponent implements OnInit {
   }
 
   public createUser () : void{
-
+    this.router.navigate(['/create']);
   }
  
 deleteUser(element){

@@ -1,0 +1,50 @@
+
+<h3>Nuevo Usuario</h3>
+<div class="createUser">
+    <form  [formGroup]="userCreate" (ngSubmit)="onSubmit()">
+        
+      <mat-form-field appearance="fill">
+        <mat-label >Nombre</mat-label>
+        <input matInput placeholder=""  formControlName="name" required>
+      </mat-form-field>
+
+        <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="pat@example.com"  formControlName="email" required>
+        <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+  
+
+
+      <mat-form-field appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+        <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </span>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Confirme Password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="confirmation" required>
+        <span mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </span>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Rol</mat-label>
+        <mat-select formControlName="role" required>
+          <mat-option *ngFor="let rol of roles" [value]="rol.role"> 
+            {{rol.role}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-card-actions class="button">
+        <button type="submit" mat-stroked-button color="primary">Guardar</button>
+       
+      </mat-card-actions>
+      
+      </form>
+</div>

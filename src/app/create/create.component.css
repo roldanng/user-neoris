@@ -1,0 +1,17 @@
+.mat-form-field + .mat-form-field {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+.createUser {
+    display: flex;
+    justify-content: center;
+    width: 96%;
+  }
+  
+  :host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }

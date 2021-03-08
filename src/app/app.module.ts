@@ -16,15 +16,19 @@ import {
   MatProgressSpinnerModule,
   MatMenuModule, 
   MatIconModule,
-  MatTableModule
+  MatTableModule,
+  MatSelectModule
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CreateComponent } from './create/create.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatProgressSpinnerModule,
     MatMenuModule, 
     MatIconModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
