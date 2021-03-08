@@ -21,6 +21,7 @@ import {
 } from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CreateComponent } from './create/create.component';
+import { EditComponent } from './edit/edit.component';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { CreateComponent } from './create/create.component';
     AppComponent,
     HomeComponent,
     LoginComponent,
-    CreateComponent
+    CreateComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

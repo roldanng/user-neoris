@@ -78,6 +78,10 @@ this.http.delete('http://localhost:3000/user/'+ element._id + '/only')
 });
 }
 
+public editUser (element) : void{
+  this.router.navigate(['/edit/'+ element._id]);
+}
+
 
 
 }
