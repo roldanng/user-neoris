@@ -3,8 +3,10 @@ import {StorageService} from "../core/services/storage.service";
 import {User} from "../core/models/user.model";
 import {AuthenticationService} from "../login/shared/authentication.service";
 import {HttpClient} from "@angular/common/http";
+import {SelectionModel} from "@angular/cdk/collections";
 
-
+const initialSelection = [];
+const allowMultiSelect = false;
 
 @Component({
   selector: 'app-home',
@@ -18,8 +20,8 @@ export class HomeComponent implements OnInit {
 
   displayedColumns: string[] = [ 'name', 'email', 'role', 'date', 'edit', 'delete'];
   dataSource = [];
-
-
+  selection = new SelectionModel<Element>(true, []);
+  
 
   constructor(private storageService: StorageService,
               private authenticationService: AuthenticationService,
@@ -37,5 +39,12 @@ export class HomeComponent implements OnInit {
   public logout(): void{
     {this.storageService.logout();}
   }
+
+ 
+prueba(element){
+console.log(element);
+}
+
+
 
 }
